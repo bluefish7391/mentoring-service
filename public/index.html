@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -174,6 +174,70 @@
 			font-size: 0.95rem;
 		}
 
+		.bio-toggle {
+			background: none;
+			border: none;
+			color: var(--accent);
+			cursor: pointer;
+			font-size: 0.9rem;
+			font-weight: bold;
+			padding: 0;
+			text-decoration: underline;
+		}
+
+		.bio-modal-overlay {
+			display: none;
+			position: fixed;
+			inset: 0;
+			background: rgba(0, 0, 0, 0.55);
+			z-index: 1000;
+			align-items: center;
+			justify-content: center;
+			padding: 20px;
+		}
+
+		.bio-modal-overlay.open {
+			display: flex;
+		}
+
+		.bio-modal {
+			background: white;
+			border-radius: 14px;
+			max-width: 560px;
+			width: 100%;
+			padding: 32px 28px 28px;
+			box-shadow: 0 12px 40px rgba(0, 0, 0, 0.25);
+			position: relative;
+			max-height: 85vh;
+			overflow-y: auto;
+		}
+
+		.bio-modal h3 {
+			margin-bottom: 14px;
+			color: var(--accent);
+		}
+
+		.bio-modal p {
+			line-height: 1.7;
+			color: #444;
+		}
+
+		.bio-modal-close {
+			position: absolute;
+			top: 14px;
+			right: 18px;
+			background: none;
+			border: none;
+			font-size: 1.5rem;
+			cursor: pointer;
+			color: #888;
+			line-height: 1;
+		}
+
+		.bio-modal-close:hover {
+			color: var(--dark);
+		}
+
 		footer {
 			background: var(--dark);
 			color: white;
@@ -236,15 +300,8 @@
 					<img src="./brian-portrait.jpg" alt="Team member group coding">
 					<p>Brian</p>
 					<small>I'm a junior from Innovation Academy high school and a computer science mentor who loves
-						helping kids discover how fun
-						and powerful coding can be! I’ve spent years building websites, apps, and solving tricky
-						problems, and now I’m excited to share that excitement with younger students like you.
-						Whether you're just starting out or already tinkering with code, I’m here to help you build
-						strong basics, think like a programmer, tackle challenges step by step, and feel proud of what
-						you create. My goal is simple: to pass on the joy I feel every time a piece of code works or a
-						new idea clicks — so you can fall in love with computer science too.
-						Outside of coding, you might catch me practicing karate, playing chess, drawing, or reading a
-						great book. Let’s explore the awesome world of CS together!</small>
+								helping kids discover how fun and powerful coding can be! <button class="bio-toggle"
+									onclick="openBioModal()">More</button></small>
 				</div>
 				<div class="team-member">
 					<img src="./charith-portrait.png" alt="Teens collaborating on laptop">
@@ -347,6 +404,43 @@
 			<p>We respect your privacy – no data sharing without consent.</p>
 		</div>
 	</footer>
+<div class="bio-modal-overlay" id="brianBioModal" onclick="closeBioModalOnOverlay(event)">
+<div class="bio-modal">
+<button class="bio-modal-close" onclick="closeBioModal()" aria-label="Close">&times;</button>
+<h3>Brian</h3>
+<p>I'm a junior from Innovation Academy high school and a computer science mentor who loves helping
+kids discover how fun and powerful coding can be! I've spent years building websites, apps, and
+solving tricky problems, and now I'm excited to share that excitement with younger students like
+you. Whether you're just starting out or already tinkering with code, I'm here to help you build
+strong basics, think like a programmer, tackle challenges step by step, and feel proud of what you
+create. My goal is simple: to pass on the joy I feel every time a piece of code works or a new
+idea clicks so you can fall in love with computer science too. Outside of coding, you
+might catch me practicing karate, playing chess, drawing, or reading a great book. Let's explore
+the awesome world of CS together!</p>
+</div>
+</div>
+
+<script>
+function openBioModal() {
+document.getElementById('brianBioModal').classList.add('open');
+document.body.style.overflow = 'hidden';
+}
+
+function closeBioModal() {
+document.getElementById('brianBioModal').classList.remove('open');
+document.body.style.overflow = '';
+}
+
+function closeBioModalOnOverlay(event) {
+if (event.target === document.getElementById('brianBioModal')) {
+closeBioModal();
+}
+}
+
+document.addEventListener('keydown', function (e) {
+if (e.key === 'Escape') closeBioModal();
+});
+</script>
 
 </body>
 
