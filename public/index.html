@@ -288,9 +288,11 @@
 		}
 
 		.share-wrapper {
-			position: relative;
+			position: fixed;
+			bottom: 30px;
+			right: 30px;
 			display: inline-block;
-			margin-top: 24px;
+			z-index: 500;
 		}
 
 		.share-toggle-btn {
@@ -317,9 +319,11 @@
 		.share-menu {
 			display: none;
 			position: absolute;
-			top: calc(100% + 10px);
-			left: 50%;
-			transform: translateX(-50%);
+			bottom: calc(100% + 10px);
+			top: auto;
+			right: 0;
+			left: auto;
+			transform: none;
 			background: white;
 			border-radius: 14px;
 			box-shadow: 0 8px 32px rgba(0, 0, 0, 0.18);
@@ -518,11 +522,7 @@
 		</div>
 	</section>
 
-	<section>
-		<div class="container" style="text-align:center;">
-			<h2>Spread the Word!</h2>
-			<p style="font-size:1.1rem; max-width:650px; margin:0 auto 10px;">Know a kid who'd love free coding classes? Share this with friends and family!</p>
-			<div class="share-wrapper">
+	<div class="share-wrapper">
 				<button class="share-toggle-btn" id="shareToggleBtn" onclick="toggleShareMenu()">&#x2197; Share This Page</button>
 				<div class="share-menu" id="shareMenu">
 					<button class="share-menu-item" id="nativeShareBtn" onclick="nativeShare()" style="display:none;">
@@ -552,9 +552,7 @@
 						X / Twitter
 					</button>
 				</div>
-			</div>
 		</div>
-	</section>
 
 	<footer>
 		<div class="container">
