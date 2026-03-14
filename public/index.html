@@ -135,6 +135,27 @@
 			height: 80px;
 			margin: 20px 30px;
 			filter: grayscale(30%);
+			transition: filter 0.3s, transform 0.3s;
+		}
+
+		.sponsors a.sponsor-logo {
+			display: inline-block;
+			margin: 20px 30px;
+			border-radius: 10px;
+			padding: 12px 20px;
+			background: white;
+			box-shadow: 0 4px 14px rgba(0,0,0,0.10);
+			transition: box-shadow 0.3s, transform 0.3s;
+			text-decoration: none;
+		}
+
+		.sponsors a.sponsor-logo:hover {
+			box-shadow: 0 8px 24px rgba(0,0,0,0.18);
+			transform: translateY(-3px);
+		}
+
+		.sponsors a.sponsor-logo:hover img {
+			filter: grayscale(0%);
 		}
 
 		.faq details {
@@ -381,8 +402,12 @@
 			<h2>Our Generous Sponsors</h2>
 			<p>A big thank you to these supporters making free classes possible!</p>
 			<div>
-				<img src="./dojo-logo.png" alt="The Abbotts Bridge Dojo">
+				<a href="https://abbottsbridgedojo.com/" class="sponsor-logo" target="_blank" rel="noopener noreferrer">
+					<img src="./dojo-logo.png" alt="The Abbotts Bridge Dojo">
+					<div style="margin-top: 8px; font-size: 0.9rem; color: var(--accent);">abbottsbridgedojo.com</div>
+				</a>
 			</div>
+			<p style="margin-top: 16px; font-size: 1rem; color: #555;">Please consider visiting and supporting them!</p>
 		</div>
 	</section>
 
