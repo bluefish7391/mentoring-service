@@ -300,23 +300,29 @@
 					<img src="./brian-portrait.jpg" alt="Team member group coding">
 					<p>Brian</p>
 					<small>I'm a junior from Innovation Academy high school and a computer science mentor who loves
-								helping kids discover how fun and powerful coding can be! <button class="bio-toggle"
-									onclick="openBioModal()">More</button></small>
+						helping kids discover how fun and powerful coding can be! <button class="bio-toggle"
+							onclick="openBioModal('brianBioModal')">More</button></small>
 				</div>
 				<div class="team-member">
 					<img src="./charith-portrait.png" alt="Teens collaborating on laptop">
 					<p>Charith</p>
-					<small>Junior • TBA</small>
+					<small>I'm a junior who fell in love with coding through AI and data projects, and I'm thrilled to
+						help younger students unlock those same skills! <button class="bio-toggle"
+							onclick="openBioModal('charithBioModal')">More</button></small>
 				</div>
 				<div class="team-member">
 					<img src="./vihaan-portrait.png" alt="Students programming together">
 					<p>Vihaan</p>
-					<small>Sophomore • TBA</small>
+					<small>I'm a sophomore who got hooked on coding by building my first game, and I can't wait to help
+						you create something awesome too! <button class="bio-toggle"
+							onclick="openBioModal('vihaanBioModal')">More</button></small>
 				</div>
 				<div class="team-member">
 					<img src="./david-portrait.jpg" alt="Students programming together">
 					<p>David</p>
-					<small>Junior • TBA</small>
+					<small>I'm a junior who loves turning ideas into real apps and websites, and I'm here to show you
+						how creative and fun coding can be! <button class="bio-toggle"
+							onclick="openBioModal('davidBioModal')">More</button></small>
 				</div>
 			</div>
 		</div>
@@ -404,43 +410,96 @@
 			<p>We respect your privacy – no data sharing without consent.</p>
 		</div>
 	</footer>
-<div class="bio-modal-overlay" id="brianBioModal" onclick="closeBioModalOnOverlay(event)">
-<div class="bio-modal">
-<button class="bio-modal-close" onclick="closeBioModal()" aria-label="Close">&times;</button>
-<h3>Brian</h3>
-<p>I'm a junior from Innovation Academy high school and a computer science mentor who loves helping
-kids discover how fun and powerful coding can be! I've spent years building websites, apps, and
-solving tricky problems, and now I'm excited to share that excitement with younger students like
-you. Whether you're just starting out or already tinkering with code, I'm here to help you build
-strong basics, think like a programmer, tackle challenges step by step, and feel proud of what you
-create. My goal is simple: to pass on the joy I feel every time a piece of code works or a new
-idea clicks so you can fall in love with computer science too. Outside of coding, you
-might catch me practicing karate, playing chess, drawing, or reading a great book. Let's explore
-the awesome world of CS together!</p>
-</div>
-</div>
+	<div class="bio-modal-overlay" id="brianBioModal" onclick="closeBioModalOnOverlay(event, 'brianBioModal')">
+		<div class="bio-modal">
+			<button class="bio-modal-close" onclick="closeBioModal('brianBioModal')" aria-label="Close">&times;</button>
+			<h3>Brian</h3>
+			<p>I'm a junior from Innovation Academy high school and a computer science mentor who loves helping
+				kids discover how fun and powerful coding can be! I've spent years building websites, apps, and
+				solving tricky problems, and now I'm excited to share that excitement with younger students like
+				you. Whether you're just starting out or already tinkering with code, I'm here to help you build
+				strong basics, think like a programmer, tackle challenges step by step, and feel proud of what you
+				create. My goal is simple: to pass on the joy I feel every time a piece of code works or a new
+				idea clicks so you can fall in love with computer science too. Outside of coding, you
+				might catch me practicing karate, playing chess, drawing, or reading a great book. Let's explore
+				the awesome world of CS together!</p>
+		</div>
+	</div>
 
-<script>
-function openBioModal() {
-document.getElementById('brianBioModal').classList.add('open');
-document.body.style.overflow = 'hidden';
-}
+	<div class="bio-modal-overlay" id="charithBioModal" onclick="closeBioModalOnOverlay(event, 'charithBioModal')">
+		<div class="bio-modal">
+			<button class="bio-modal-close" onclick="closeBioModal('charithBioModal')"
+				aria-label="Close">&times;</button>
+			<h3>Charith</h3>
+			<p>I'm a junior passionate about computer science, especially the intersection of AI and real-world problem
+				solving. I first got hooked on coding when I used Python to analyze sports statistics for a school
+				project, and I've been exploring machine learning and data science ever since. Now I'm channeling that
+				excitement into teaching, because I believe every kid has what it takes to understand how technology
+				works and shape it for the better. In our sessions, I'll break down big ideas into simple, satisfying
+				steps so concepts actually stick. Whether we're experimenting with algorithms or styling a webpage, my
+				goal is for you to walk away feeling genuinely capable and curious. When I'm not coding, you'll find me
+				on the soccer field, playing the piano, or diving into a good documentary about science or history.
+				Let's build something great together!</p>
+		</div>
+	</div>
 
-function closeBioModal() {
-document.getElementById('brianBioModal').classList.remove('open');
-document.body.style.overflow = '';
-}
+	<div class="bio-modal-overlay" id="vihaanBioModal" onclick="closeBioModalOnOverlay(event, 'vihaanBioModal')">
+		<div class="bio-modal">
+			<button class="bio-modal-close" onclick="closeBioModal('vihaanBioModal')"
+				aria-label="Close">&times;</button>
+			<h3>Vihaan</h3>
+			<p>I'm a sophomore and my coding journey started when I decided to build a simple maze game just to see if I
+				could do it. That one project turned into a full obsession with game design, interactive apps, and
+				creative coding. I work mostly in Python and JavaScript, and I love finding ways to make programs feel
+				alive and fun. What I enjoy most about mentoring is watching the moment something clicks for a student
+				when they go from "I don't get it" to "wait, I can do this!" I meet every learner where they are,
+				whether you've never written a line of code or you've already tinkered with Scratch or Roblox Studio.
+				Outside of coding, I enjoy playing basketball, building LEGO sets, and trying to beat my high score in
+				whatever game I'm currently obsessed with. Can't wait to build something fun with you!</p>
+		</div>
+	</div>
 
-function closeBioModalOnOverlay(event) {
-if (event.target === document.getElementById('brianBioModal')) {
-closeBioModal();
-}
-}
+	<div class="bio-modal-overlay" id="davidBioModal" onclick="closeBioModalOnOverlay(event, 'davidBioModal')">
+		<div class="bio-modal">
+			<button class="bio-modal-close" onclick="closeBioModal('davidBioModal')" aria-label="Close">&times;</button>
+			<h3>David</h3>
+			<p>I'm a junior and coding has been my creative outlet for as long as I can remember. I started by tinkering
+				with HTML to build my own little websites, then gradually expanded into JavaScript, app development, and
+				even some backend work. What really drives me is the idea that a few lines of code can become something
+				real a working tool, a cool effect, a page you're proud to show people. I love making that feeling
+				accessible to younger students by focusing on projects that are personal and meaningful to them. Whether
+				you want to build a fan page for your favorite game, code a quiz for your friends, or just learn how the
+				internet works, I'll help you get there step by step. Outside of tech, I'm into photography, hiking, and
+				playing guitar. Let's turn your ideas into reality!</p>
+		</div>
+	</div>
 
-document.addEventListener('keydown', function (e) {
-if (e.key === 'Escape') closeBioModal();
-});
-</script>
+	<script>
+		function openBioModal(id) {
+			document.getElementById(id).classList.add('open');
+			document.body.style.overflow = 'hidden';
+		}
+
+		function closeBioModal(id) {
+			document.getElementById(id).classList.remove('open');
+			document.body.style.overflow = '';
+		}
+
+		function closeBioModalOnOverlay(event, id) {
+			if (event.target === document.getElementById(id)) {
+				closeBioModal(id);
+			}
+		}
+
+		document.addEventListener('keydown', function (e) {
+			if (e.key === 'Escape') {
+				document.querySelectorAll('.bio-modal-overlay.open').forEach(function (modal) {
+					modal.classList.remove('open');
+				});
+				document.body.style.overflow = '';
+			}
+		});
+	</script>
 
 </body>
 
