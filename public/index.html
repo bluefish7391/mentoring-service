@@ -212,7 +212,7 @@
 		}
 
 		.bio-modal-overlay {
-			display: none;
+			display: flex;
 			position: fixed;
 			inset: 0;
 			background: rgba(0, 0, 0, 0.55);
@@ -220,10 +220,16 @@
 			align-items: center;
 			justify-content: center;
 			padding: 20px;
+			opacity: 0;
+			visibility: hidden;
+			pointer-events: none;
+			transition: opacity 0.3s ease, visibility 0.3s ease;
 		}
 
 		.bio-modal-overlay.open {
-			display: flex;
+			opacity: 1;
+			visibility: visible;
+			pointer-events: auto;
 		}
 
 		.bio-modal {
@@ -236,6 +242,12 @@
 			position: relative;
 			max-height: 85vh;
 			overflow-y: auto;
+			transform: scale(0.95);
+			transition: transform 0.3s ease;
+		}
+
+		.bio-modal-overlay.open .bio-modal {
+			transform: scale(1);
 		}
 
 		.bio-modal h3 {
@@ -660,8 +672,14 @@
 		}
 
 		function closeBioModal(id) {
-			document.getElementById(id).classList.remove('open');
-			document.body.style.overflow = '';
+			var overlay = document.getElementById(id);
+			overlay.classList.remove('open');
+			overlay.addEventListener('transitionend', function handler() {
+				overlay.removeEventListener('transitionend', handler);
+				if (!document.querySelector('.bio-modal-overlay.open')) {
+					document.body.style.overflow = '';
+				}
+			});
 		}
 
 		function closeBioModalOnOverlay(event, id) {
@@ -673,9 +691,8 @@
 		document.addEventListener('keydown', function (e) {
 			if (e.key === 'Escape') {
 				document.querySelectorAll('.bio-modal-overlay.open').forEach(function (modal) {
-					modal.classList.remove('open');
+					closeBioModal(modal.id);
 				});
-				document.body.style.overflow = '';
 			}
 		});
 
