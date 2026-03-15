@@ -163,10 +163,90 @@
 			filter: grayscale(0%);
 		}
 
-		.faq details {
-			margin: 16px 0;
-			border-bottom: 1px solid #ddd;
-			padding-bottom: 12px;
+		.faq-list {
+			max-width: 800px;
+			margin: 0 auto;
+			display: flex;
+			flex-direction: column;
+			gap: 14px;
+		}
+
+		.faq-item {
+			background: white;
+			border-radius: 12px;
+			box-shadow: 0 4px 14px rgba(0, 0, 0, 0.08);
+			overflow: hidden;
+			border-left: 4px solid var(--primary);
+			transition: box-shadow 0.3s;
+		}
+
+		.faq-item:hover {
+			box-shadow: 0 6px 20px rgba(0, 0, 0, 0.13);
+		}
+
+		.faq-item.open {
+			border-left-color: var(--accent);
+		}
+
+		.faq-question {
+			width: 100%;
+			background: none;
+			border: none;
+			text-align: left;
+			padding: 18px 22px;
+			font-size: 1.05rem;
+			font-weight: 600;
+			color: var(--dark);
+			cursor: pointer;
+			display: flex;
+			align-items: center;
+			justify-content: space-between;
+			gap: 12px;
+			font-family: inherit;
+		}
+
+		.faq-question:hover {
+			color: var(--accent);
+		}
+
+		.faq-icon {
+			flex-shrink: 0;
+			width: 28px;
+			height: 28px;
+			background: var(--light);
+			border-radius: 50%;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			font-size: 1.2rem;
+			color: var(--primary);
+			transition: transform 0.3s, background 0.3s, color 0.3s;
+			line-height: 1;
+			font-weight: 300;
+		}
+
+		.faq-item.open .faq-icon {
+			transform: rotate(45deg);
+			background: var(--accent);
+			color: white;
+		}
+
+		.faq-answer {
+			max-height: 0;
+			overflow: hidden;
+			transition: max-height 0.35s ease, padding 0.35s ease;
+			padding: 0 22px;
+		}
+
+		.faq-answer-inner {
+			padding-bottom: 18px;
+			color: #555;
+			line-height: 1.7;
+			font-size: 1rem;
+		}
+
+		.faq-item.open .faq-answer {
+			max-height: 500px;
 		}
 
 		.team-gallery {
@@ -555,20 +635,36 @@
 
 	<section>
 		<div class="container">
-			<h2>FAQ</h2>
-			<details>
-				<summary>Is it really free?</summary>
-				<p>Yes! 100% free thanks to our sponsors.</p>
-			</details>
-			<details>
-				<summary>What if my child is a total beginner?</summary>
-				<p>Perfect! We start from scratch and adjust to each child's level.</p>
-			</details>
-			<details>
-				<summary>How do I sign up?</summary>
-				<p>Click <a href="https://forms.office.com/r/kcuqDF8fRu">"Sign Up Free Now"</a> and fill out the short
-					form.</p>
-			</details>
+			<h2>Frequently Asked Questions</h2>
+			<div class="faq-list">
+				<div class="faq-item">
+					<button class="faq-question" onclick="toggleFaq(this)" aria-expanded="false">
+						Is it really free?
+						<span class="faq-icon" aria-hidden="true">+</span>
+					</button>
+					<div class="faq-answer">
+						<div class="faq-answer-inner">Yes, 100% free — every single session. Our classes are made possible by generous local sponsors, so there's absolutely no cost to you or your family.</div>
+					</div>
+				</div>
+				<div class="faq-item">
+					<button class="faq-question" onclick="toggleFaq(this)" aria-expanded="false">
+						What age group is this for?
+						<span class="faq-icon" aria-hidden="true">+</span>
+					</button>
+					<div class="faq-answer">
+						<div class="faq-answer-inner">Our classes are designed for elementary and middle school students, roughly ages 8–15. Sessions are personalized, so both younger and older students in that range are warmly welcome!</div>
+					</div>
+				</div>
+				<div class="faq-item">
+					<button class="faq-question" onclick="toggleFaq(this)" aria-expanded="false">
+						What if my child is a total beginner?
+						<span class="faq-icon" aria-hidden="true">+</span>
+					</button>
+					<div class="faq-answer">
+						<div class="faq-answer-inner">That's actually perfect! We start from scratch and build up at your child's own pace. No prior coding experience is needed at all — just curiosity and a willingness to have fun.</div>
+					</div>
+				</div>
+			</div>
 		</div>
 	</section>
 
@@ -695,6 +791,13 @@
 				});
 			}
 		});
+
+		function toggleFaq(btn) {
+			var item = btn.closest('.faq-item');
+			var isOpen = item.classList.contains('open');
+			item.classList.toggle('open', !isOpen);
+			btn.setAttribute('aria-expanded', String(!isOpen));
+		}
 
 		var shareUrl = window.location.href;
 		var shareTitle = 'Free Coding Classes for Kids \u2013 Alpharetta and Surrounding Areas';
