@@ -76,7 +76,9 @@ h1 {
 }
 
 h2 {
-	font-size: 2.2rem;
+	font-size: 2.4rem;
+	font-weight: 700;
+	letter-spacing: -0.01em;
 	margin: 40px 0 20px;
 	text-align: center;
 }
@@ -539,4 +541,363 @@ footer {
 .float-signup-btn:hover {
 	transform: translateY(-3px);
 	box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+}
+
+/* ─────────────────────────────────────────
+   Scroll padding for sticky nav
+───────────────────────────────────────── */
+html {
+	scroll-padding-top: 70px;
+}
+
+/* ─────────────────────────────────────────
+   Sticky Navigation
+───────────────────────────────────────── */
+.site-nav {
+	position: sticky;
+	top: 0;
+	z-index: 550;
+	background: #fff;
+	border-bottom: 1px solid #e8e8e8;
+	transition: box-shadow 0.3s;
+}
+
+.site-nav.nav-scrolled {
+	box-shadow: 0 2px 12px rgba(0, 0, 0, 0.12);
+}
+
+.nav-inner {
+	display: flex;
+	align-items: center;
+	gap: 24px;
+	height: 58px;
+}
+
+.nav-brand {
+	font-weight: 700;
+	font-size: 1rem;
+	color: var(--primary);
+	text-decoration: none;
+	white-space: nowrap;
+	margin-right: auto;
+}
+
+.nav-brand:hover {
+	color: var(--accent);
+}
+
+.nav-links {
+	list-style: none;
+	display: flex;
+	gap: 28px;
+	margin: 0;
+}
+
+.nav-links a {
+	text-decoration: none;
+	color: var(--dark);
+	font-size: 0.95rem;
+	font-weight: 500;
+	transition: color 0.2s;
+}
+
+.nav-links a:hover {
+	color: var(--accent);
+}
+
+.nav-cta {
+	display: inline-block;
+	background: var(--accent);
+	color: white;
+	font-weight: 700;
+	padding: 8px 20px;
+	border-radius: 50px;
+	text-decoration: none;
+	font-size: 0.9rem;
+	white-space: nowrap;
+	transition: background 0.2s, transform 0.2s;
+}
+
+.nav-cta:hover {
+	background: #1976D2;
+	transform: translateY(-1px);
+}
+
+.hamburger {
+	display: none;
+	background: none;
+	border: none;
+	font-size: 1.5rem;
+	color: var(--dark);
+	cursor: pointer;
+	padding: 4px 8px;
+	line-height: 1;
+	margin-left: auto;
+	flex-shrink: 0;
+}
+
+@media (max-width: 768px) {
+	.hamburger {
+		display: block;
+	}
+
+	.nav-links {
+		display: none;
+		flex-direction: column;
+		gap: 0;
+		position: absolute;
+		top: 58px;
+		left: 0;
+		right: 0;
+		background: #fff;
+		box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+		padding: 10px 0;
+		z-index: 549;
+	}
+
+	.nav-links.open {
+		display: flex;
+	}
+
+	.nav-links li a {
+		display: block;
+		padding: 12px 24px;
+	}
+
+	.nav-cta {
+		display: none;
+	}
+}
+
+/* ─────────────────────────────────────────
+   Section intro text
+───────────────────────────────────────── */
+.section-intro {
+	text-align: center;
+	max-width: 720px;
+	margin: 0 auto 36px;
+	font-size: 1.1rem;
+	color: #555;
+}
+
+/* ─────────────────────────────────────────
+   Outline button variant
+───────────────────────────────────────── */
+.btn-outline {
+	background: transparent;
+	color: white;
+	border: 2px solid rgba(255, 255, 255, 0.85);
+	box-shadow: none;
+}
+
+.btn-outline:hover {
+	background: rgba(255, 255, 255, 0.15);
+	color: white;
+	border-color: white;
+}
+
+/* ─────────────────────────────────────────
+   Program Overview — two pillar cards
+───────────────────────────────────────── */
+.pillar-grid {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	gap: 30px;
+	margin-top: 10px;
+}
+
+.pillar-card {
+	background: var(--light);
+	border-radius: 14px;
+	padding: 30px 28px;
+	box-shadow: 0 4px 16px rgba(0, 0, 0, 0.07);
+	border-top: 4px solid var(--primary);
+}
+
+.pillar-card--accent {
+	border-top-color: var(--accent);
+}
+
+.pillar-card h3 {
+	font-size: 1.3rem;
+	margin-bottom: 16px;
+	color: var(--dark);
+}
+
+.pillar-card ul {
+	list-style: none;
+	padding: 0;
+}
+
+.pillar-card ul li {
+	padding: 8px 0 8px 28px;
+	position: relative;
+	color: #555;
+	font-size: 1rem;
+	line-height: 1.5;
+}
+
+.pillar-card ul li::before {
+	content: "\2192";
+	color: var(--primary);
+	position: absolute;
+	left: 0;
+	font-weight: bold;
+}
+
+.pillar-card--accent ul li::before {
+	color: var(--accent);
+}
+
+@media (max-width: 768px) {
+	.pillar-grid {
+		grid-template-columns: 1fr;
+	}
+}
+
+/* ─────────────────────────────────────────
+   What You'll Explore — 6-card responsive grid
+───────────────────────────────────────── */
+.explore-grid {
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	gap: 24px;
+}
+
+@media (max-width: 900px) {
+	.explore-grid {
+		grid-template-columns: repeat(2, 1fr);
+	}
+}
+
+@media (max-width: 600px) {
+	.explore-grid {
+		grid-template-columns: 1fr;
+	}
+}
+
+/* ─────────────────────────────────────────
+   Your Learning Journey
+───────────────────────────────────────── */
+.journey-steps {
+	display: flex;
+	align-items: flex-start;
+	justify-content: center;
+	margin-top: 16px;
+	flex-wrap: wrap;
+	gap: 0;
+}
+
+.journey-step {
+	background: var(--light);
+	border-radius: 14px;
+	padding: 28px 24px;
+	text-align: center;
+	flex: 1;
+	min-width: 180px;
+	max-width: 280px;
+	box-shadow: 0 4px 14px rgba(0, 0, 0, 0.07);
+}
+
+.journey-step-number {
+	width: 44px;
+	height: 44px;
+	background: var(--primary);
+	color: white;
+	border-radius: 50%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	font-size: 1.2rem;
+	font-weight: 700;
+	margin: 0 auto 14px;
+}
+
+.journey-step h3 {
+	color: var(--dark);
+	margin-bottom: 10px;
+	font-size: 1.15rem;
+}
+
+.journey-step p {
+	color: #555;
+	font-size: 0.95rem;
+	line-height: 1.5;
+}
+
+.journey-step-divider {
+	font-size: 2rem;
+	color: #ccc;
+	padding: 0 10px;
+	align-self: center;
+	flex-shrink: 0;
+}
+
+@media (max-width: 768px) {
+	.journey-steps {
+		flex-direction: column;
+		align-items: center;
+	}
+
+	.journey-step-divider {
+		transform: rotate(90deg);
+		padding: 4px 0;
+	}
+
+	.journey-step {
+		max-width: 100%;
+		width: 100%;
+	}
+}
+
+/* ─────────────────────────────────────────
+   Testimonials (hidden at launch)
+───────────────────────────────────────── */
+.testimonials-section {
+	display: none;
+	/* Remove display:none from the inline style to reveal after first sessions */
+}
+
+.testimonials-grid {
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	gap: 24px;
+	margin-top: 20px;
+}
+
+.testimonial-card {
+	background: var(--light);
+	border-radius: 14px;
+	padding: 24px;
+	box-shadow: 0 4px 14px rgba(0, 0, 0, 0.07);
+	border-left: 4px solid var(--primary);
+}
+
+.testimonial-card blockquote {
+	font-size: 1rem;
+	color: #444;
+	line-height: 1.7;
+	font-style: italic;
+	margin-bottom: 14px;
+}
+
+.testimonial-card footer {
+	font-size: 0.9rem;
+	color: #888;
+	font-weight: 600;
+	background: none;
+	padding: 0;
+	text-align: left;
+}
+
+@media (max-width: 900px) {
+	.testimonials-grid {
+		grid-template-columns: 1fr 1fr;
+	}
+}
+
+@media (max-width: 600px) {
+	.testimonials-grid {
+		grid-template-columns: 1fr;
+	}
 }
