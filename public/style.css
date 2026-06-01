@@ -455,6 +455,21 @@ ul.benefits li::before {
 	color: var(--dark);
 }
 
+.bio-modal--letter {
+	max-width: 680px;
+	line-height: 1.8;
+}
+
+.bio-modal--letter p {
+	margin-bottom: 1rem;
+}
+
+.bio-modal--letter h4 {
+	margin-top: 1.5rem;
+	font-size: 1.05rem;
+	color: var(--accent);
+}
+
 footer {
 	background: var(--dark);
 	color: white;
