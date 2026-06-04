@@ -472,6 +472,15 @@ ul.benefits li::before {
 	color: var(--accent);
 }
 
+.team-intro {
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto 32px;
+    font-size: 1.1rem;
+    color: #555;
+    line-height: 1.8;
+}
+
 /* Founder letter card — in Team section */
 .founder-letter-card {
 	background: #f0f7f0;
