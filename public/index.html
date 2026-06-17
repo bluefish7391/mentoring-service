@@ -747,7 +747,7 @@
 					const item = this.items[0];
 					if (!item) return;
 					const gap = parseInt(getComputedStyle(this.track).gap, 10) || 20;
-					const cardW = item.getBoundingClientRect().width;
+					const cardW = item.offsetWidth;
 					if (!animate) this.track.style.transition = 'none';
 					this.track.style.transform = `translateX(-${this.index * (cardW + gap)}px)`;
 					if (!animate) requestAnimationFrame(() => { this.track.style.transition = ''; });
