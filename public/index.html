@@ -323,7 +323,6 @@
 		</div>
 
 		<div class="ctlg-dots" aria-hidden="true" data-ctlg-dots></div>
-
 	</section>
 
 	<div class="ctlg-lightbox" id="ctlg-lightbox" role="dialog" aria-modal="true" aria-label="Image lightbox"
@@ -715,8 +714,12 @@
 
 				_init() {
 					this._buildDots();
-					this._slide(0, false);
-					this._bindEvents();
+					// Defer first slide until after the browser has laid out the track,
+					// so getBoundingClientRect() returns real dimensions.
+					requestAnimationFrame(() => {
+						this._slide(0, false);
+						this._bindEvents();
+					});
 				}
 
 				_buildDots() {
