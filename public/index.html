@@ -257,7 +257,7 @@
 
 			<div class="ctlg-viewport">
 				<div class="ctlg-track" data-ctlg-track>
-					<article class="ctlg-item" data-index="0" data-caption="Students working together on a coding project" data-category="Coding" role="button" tabindex="0" aria-label="Open: Students working together on a coding project">
+					<article class="ctlg-item" data-index="0" data-caption="Students working together on a coding project" role="button" tabindex="0" aria-label="Open: Students working together on a coding project">
 						<div class="ctlg-img-wrap">
 							<img class="ctlg-img" src="./photos/networking-1.webp" alt="Students working together on a coding project" loading="lazy" />
 							<div class="ctlg-overlay"></div>
@@ -267,7 +267,7 @@
 						</div>
 					</article>
 
-					<article class="ctlg-item" data-index="1" data-caption="A student presenting their project to the group" data-category="Demo Day" role="button" tabindex="0" aria-label="Open: A student presenting their project to the group">
+					<article class="ctlg-item" data-index="1" data-caption="A student presenting their project to the group" role="button" tabindex="0" aria-label="Open: A student presenting their project to the group">
 						<div class="ctlg-img-wrap">
 							<img class="ctlg-img" src="./photos/networking-2.webp" alt="A student presenting their project to the group" loading="lazy" />
 							<div class="ctlg-overlay"></div>
@@ -277,7 +277,7 @@
 						</div>
 					</article>
 
-					<article class="ctlg-item" data-index="2" data-caption="Students collaborating on a hands-on activity" data-category="Teamwork" role="button" tabindex="0" aria-label="Open: Students collaborating on a hands-on activity">
+					<article class="ctlg-item" data-index="2" data-caption="Students collaborating on a hands-on activity" role="button" tabindex="0" aria-label="Open: Students collaborating on a hands-on activity">
 						<div class="ctlg-img-wrap">
 							<img class="ctlg-img" src="./photos/networking-3.webp" alt="Students collaborating on a hands-on activity" loading="lazy" />
 							<div class="ctlg-overlay"></div>
@@ -287,7 +287,7 @@
 						</div>
 					</article>
 
-					<article class="ctlg-item" data-index="3" data-caption="A group of students sharing ideas during a workshop" data-category="Workshop" role="button" tabindex="0" aria-label="Open: A group of students sharing ideas during a workshop">
+					<article class="ctlg-item" data-index="3" data-caption="A group of students sharing ideas during a workshop" role="button" tabindex="0" aria-label="Open: A group of students sharing ideas during a workshop">
 						<div class="ctlg-img-wrap">
 							<img class="ctlg-img" src="./photos/networking-4.webp" alt="A group of students sharing ideas during a workshop" loading="lazy" />
 							<div class="ctlg-overlay"></div>
@@ -657,10 +657,6 @@
 	<script src="script.js"></script>
 
 	<script>
-	/* ═══════════════════════════════════════════════════════════════
-	   Creative Tech Lab — Gallery Carousel & Lightbox
-	   Pure Vanilla JS ES6+ | No external libraries
-	═══════════════════════════════════════════════════════════════ */
 	(() => {
 		'use strict';
 
@@ -765,7 +761,6 @@
 			constructor() {
 				this.lb      = document.getElementById('ctlg-lightbox');
 				this.img     = this.lb.querySelector('[data-lb-img]');
-				this.tag     = this.lb.querySelector('[data-lb-tag]');
 				this.caption = this.lb.querySelector('[data-lb-caption]');
 				this.indexEl = this.lb.querySelector('[data-lb-index]');
 				this.items   = [];
@@ -800,7 +795,6 @@
 				this.img.onload = () => { this.img.style.opacity = '1'; };
 				this.img.src     = src;
 				this.img.alt     = item.querySelector('.ctlg-img').alt;
-				this.tag.textContent     = item.dataset.category || '';
 				this.caption.textContent = item.dataset.caption  || '';
 				this.indexEl.textContent = `${this.current + 1} / ${this.items.length}`;
 			}
