@@ -15,6 +15,16 @@
 	}
 }
 
+@keyframes btnShine {
+	from {
+		left: -75%;
+	}
+
+	to {
+		left: 125%;
+	}
+}
+
 header h1 {
 	animation: fadeUp 0.6s ease both;
 }
