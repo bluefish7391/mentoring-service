@@ -187,7 +187,7 @@
 			<div class="founder-letter-card">
 				<p>&ldquo;Computer science is so much bigger, deeper, and more exciting than the surface-level coding
 					we are usually taught in school.&rdquo;</p>
-				<button class="bio-toggle" onclick="openBioModal('founderLetterModal')">Read a letter from the founder
+				<button class="bio-toggle" data-modal-open="founderLetterModal">Read a letter from the founder
 					&rarr;</button>
 			</div>
 
@@ -199,21 +199,21 @@
 						<p>Brian</p>
 						<small>I&rsquo;m an Innovation Academy senior into everything from software development to
 							quantum computing, here to help you find your favorite part of the tech world!
-							<button class="bio-toggle" onclick="openBioModal('brianBioModal')">More</button></small>
+							<button class="bio-toggle" data-modal-open="brianBioModal">More</button></small>
 					</div>
 					<div class="team-member">
 						<img src="./photos/team-profiles/david-portrait.jpeg" alt="David">
 						<p>David</p>
 						<small>Hello! My name is David Nahra, I am a rising senior in Chattahoochee High School and I
 							love helping to teach the next generation of computer scientists!
-							<button class="bio-toggle" onclick="openBioModal('davidBioModal')">More</button></small>
+							<button class="bio-toggle" data-modal-open="davidBioModal">More</button></small>
 					</div>
 					<div class="team-member">
 						<img src="./photos/team-profiles/connor-portrait.jpg" alt="Connor">
 						<p>Connor</p>
 						<small>Hello! My name is Connor, I am a rising senior at Innovation Academy High School looking
 							forward to helping a younger generation find their start in computer science!
-							<button class="bio-toggle" onclick="openBioModal('connorBioModal')">More</button></small>
+							<button class="bio-toggle" data-modal-open="connorBioModal">More</button></small>
 					</div>
 				</div>
 			</div>
@@ -226,7 +226,7 @@
 						<p>Vihaan</p>
 						<small>I&rsquo;m an Innovation Academy junior into physics and engineering, here to show anyone
 							who's intimidated by digital tech that you can absolutely learn to love it!
-							<button class="bio-toggle" onclick="openBioModal('vihaanBioModal')">More</button></small>
+							<button class="bio-toggle" data-modal-open="vihaanBioModal">More</button></small>
 					</div>
 				</div>
 			</div>
@@ -421,7 +421,7 @@
 			<h2>Frequently Asked Questions</h2>
 			<div class="faq-list">
 				<div class="faq-item">
-					<button class="faq-question" onclick="toggleFaq(this)" aria-expanded="false">
+					<button class="faq-question" aria-expanded="false">
 						Is it really free?
 						<span class="faq-icon" aria-hidden="true">+</span>
 					</button>
@@ -431,7 +431,7 @@
 					</div>
 				</div>
 				<div class="faq-item">
-					<button class="faq-question" onclick="toggleFaq(this)" aria-expanded="false">
+					<button class="faq-question" aria-expanded="false">
 						What age group is this for?
 						<span class="faq-icon" aria-hidden="true">+</span>
 					</button>
@@ -442,7 +442,7 @@
 					</div>
 				</div>
 				<div class="faq-item">
-					<button class="faq-question" onclick="toggleFaq(this)" aria-expanded="false">
+					<button class="faq-question" aria-expanded="false">
 						What if my student is a total beginner?
 						<span class="faq-icon" aria-hidden="true">+</span>
 					</button>
@@ -452,7 +452,7 @@
 					</div>
 				</div>
 				<div class="faq-item">
-					<button class="faq-question" onclick="toggleFaq(this)" aria-expanded="false">
+					<button class="faq-question" aria-expanded="false">
 						What does a typical Sunday session look like?
 						<span class="faq-icon" aria-hidden="true">+</span>
 					</button>
@@ -466,7 +466,7 @@
 					</div>
 				</div>
 				<div class="faq-item">
-					<button class="faq-question" onclick="toggleFaq(this)" aria-expanded="false">
+					<button class="faq-question" aria-expanded="false">
 						What if my student misses a Sunday?
 						<span class="faq-icon" aria-hidden="true">+</span>
 					</button>
@@ -477,7 +477,7 @@
 					</div>
 				</div>
 				<div class="faq-item">
-					<button class="faq-question" onclick="toggleFaq(this)" aria-expanded="false">
+					<button class="faq-question" aria-expanded="false">
 						Is drop-off okay?
 						<span class="faq-icon" aria-hidden="true">+</span>
 					</button>
@@ -488,7 +488,7 @@
 					</div>
 				</div>
 				<div class="faq-item">
-					<button class="faq-question" onclick="toggleFaq(this)" aria-expanded="false">
+					<button class="faq-question" aria-expanded="false">
 						What will my student build by the end?
 						<span class="faq-icon" aria-hidden="true">+</span>
 					</button>
@@ -501,7 +501,7 @@
 					</div>
 				</div>
 				<div class="faq-item">
-					<button class="faq-question" onclick="toggleFaq(this)" aria-expanded="false">
+					<button class="faq-question" aria-expanded="false">
 						Will any adults be present?
 						<span class="faq-icon" aria-hidden="true">+</span>
 					</button>
@@ -512,7 +512,7 @@
 					</div>
 				</div>
 				<div class="faq-item">
-					<button class="faq-question" onclick="toggleFaq(this)" aria-expanded="false">
+					<button class="faq-question" aria-expanded="false">
 						Will I receive a confirmation email after signing up?
 						<span class="faq-icon" aria-hidden="true">+</span>
 					</button>
@@ -530,18 +530,18 @@
 		<a href="https://forms.office.com/r/kcuqDF8fRu" id="float-signup-link" class="float-signup-btn signup-link">Sign
 			Up Free Now</a>
 		<div class="share-wrapper">
-			<button class="share-toggle-btn" id="shareToggleBtn" onclick="toggleShareMenu()">&#x2197; Share This
+			<button class="share-toggle-btn" id="shareToggleBtn">&#x2197; Share This
 				Page</button>
 			<div class="share-menu" id="shareMenu">
-				<button class="share-menu-item" id="nativeShareBtn" onclick="nativeShare()" style="display:none;">
+				<button class="share-menu-item" id="nativeShareBtn" data-share-action="native" style="display:none;">
 					<span class="menu-dot menu-dot-native">&#x2197;</span>
 					Share via System&hellip;
 				</button>
-				<button class="share-menu-item" onclick="shareViaSMS()">
+				<button class="share-menu-item" data-share-action="sms">
 					<span class="menu-dot menu-dot-sms">&#x1F4AC;</span>
 					Text a Friend
 				</button>
-				<button class="share-menu-item" onclick="shareViaWhatsApp()">
+				<button class="share-menu-item" data-share-action="whatsapp">
 					<span class="menu-dot menu-dot-whatsapp">
 						<svg width="17" height="17" viewBox="0 0 24 24" fill="white" aria-hidden="true">
 							<path
@@ -550,7 +550,7 @@
 					</span>
 					WhatsApp
 				</button>
-				<button class="share-menu-item" onclick="shareViaFacebook()">
+				<button class="share-menu-item" data-share-action="facebook">
 					<span class="menu-dot menu-dot-facebook">
 						<svg width="17" height="17" viewBox="0 0 24 24" fill="white" aria-hidden="true">
 							<path
@@ -559,7 +559,7 @@
 					</span>
 					Facebook
 				</button>
-				<button class="share-menu-item" onclick="shareViaTwitter()">
+				<button class="share-menu-item" data-share-action="twitter">
 					<span class="menu-dot menu-dot-twitter">
 						<svg width="17" height="17" viewBox="0 0 24 24" fill="white" aria-hidden="true">
 							<path
@@ -580,9 +580,9 @@
 		</div>
 	</footer>
 
-	<div class="bio-modal-overlay" id="brianBioModal" onclick="closeBioModalOnOverlay(event, 'brianBioModal')">
+	<div class="bio-modal-overlay" id="brianBioModal" data-modal-overlay>
 		<div class="bio-modal">
-			<button class="bio-modal-close" onclick="closeBioModal('brianBioModal')" aria-label="Close">&times;</button>
+			<button class="bio-modal-close" data-modal-close aria-label="Close">&times;</button>
 			<h3>Brian Nguyen</h3>
 			<p>I&rsquo;m a senior from Innovation Academy High School who has been passionate about computer science
 				since third grade! Ever since I created my first basic web page, I&rsquo;ve spent years building
@@ -596,9 +596,9 @@
 		</div>
 	</div>
 
-	<div class="bio-modal-overlay" id="vihaanBioModal" onclick="closeBioModalOnOverlay(event, 'vihaanBioModal')">
+	<div class="bio-modal-overlay" id="vihaanBioModal" data-modal-overlay>
 		<div class="bio-modal">
-			<button class="bio-modal-close" onclick="closeBioModal('vihaanBioModal')"
+			<button class="bio-modal-close" data-modal-close
 				aria-label="Close">&times;</button>
 			<h3>Vihaan Bendigiri</h3>
 			<p>I’m a junior at FCS Innovation Academy with a passion for engineering, high energy physics, and obviously
@@ -612,9 +612,9 @@
 		</div>
 	</div>
 
-	<div class="bio-modal-overlay" id="davidBioModal" onclick="closeBioModalOnOverlay(event, 'davidBioModal')">
+	<div class="bio-modal-overlay" id="davidBioModal" data-modal-overlay>
 		<div class="bio-modal">
-			<button class="bio-modal-close" onclick="closeBioModal('davidBioModal')" aria-label="Close">&times;</button>
+			<button class="bio-modal-close" data-modal-close aria-label="Close">&times;</button>
 			<h3>David</h3>
 			<p>Hello! My name is David Nahra, I am a rising senior in Chattahoochee High School and I love helping to
 				teach the next generation of future doctors and computer scientists! I have lots of experience teaching
@@ -622,9 +622,9 @@
 		</div>
 	</div>
 
-	<div class="bio-modal-overlay" id="connorBioModal" onclick="closeBioModalOnOverlay(event, 'connorBioModal')">
+	<div class="bio-modal-overlay" id="connorBioModal" data-modal-overlay>
 		<div class="bio-modal">
-			<button class="bio-modal-close" onclick="closeBioModal('connorBioModal')"
+			<button class="bio-modal-close" data-modal-close
 				aria-label="Close">&times;</button>
 			<h3>Connor</h3>
 			<p>Hey I'm Connor an Innovation Academy Senior who loves to work with business and technology. Over the
@@ -635,10 +635,9 @@
 		</div>
 	</div>
 
-	<div class="bio-modal-overlay" id="founderLetterModal"
-		onclick="closeBioModalOnOverlay(event, 'founderLetterModal')">
+	<div class="bio-modal-overlay" id="founderLetterModal" data-modal-overlay>
 		<div class="bio-modal bio-modal--letter">
-			<button class="bio-modal-close" onclick="closeBioModal('founderLetterModal')"
+			<button class="bio-modal-close" data-modal-close
 				aria-label="Close">&times;</button>
 			<h3>A Letter from the Founder</h3>
 
@@ -702,6 +701,7 @@
 	<script src="js/site/modals.js"></script>
 	<script src="js/site/faq.js"></script>
 	<script src="js/site/share.js"></script>
+	<script src="js/site/delegated-events.js"></script>
 	<script src="js/site/reveal.js"></script>
 	<script src="js/gallery.js"></script>
 </body>
