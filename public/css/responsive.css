@@ -1,0 +1,89 @@
+@media (max-width: 900px) {
+	.explore-grid {
+		grid-template-columns: repeat(2, 1fr);
+	}
+
+	.testimonials-grid {
+		grid-template-columns: 1fr 1fr;
+	}
+}
+
+@media (max-width: 768px) {
+	h1 {
+		font-size: 2.3rem;
+	}
+
+	header {
+		padding: 60px 15px 40px;
+	}
+
+	.skills {
+		flex-direction: column;
+		align-items: center;
+	}
+
+	.team-gallery {
+		flex-direction: column;
+		align-items: center;
+	}
+
+	.hamburger {
+		display: block;
+	}
+
+	.nav-links {
+		display: none;
+		flex-direction: column;
+		gap: 0;
+		position: absolute;
+		top: 58px;
+		left: 0;
+		right: 0;
+		background: #fff;
+		box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+		padding: 10px 0;
+		z-index: 549;
+	}
+
+	.nav-links.open {
+		display: flex;
+	}
+
+	.nav-links li a {
+		display: block;
+		padding: 12px 24px;
+	}
+
+	.nav-cta {
+		display: none;
+	}
+
+	.pillar-grid {
+		grid-template-columns: 1fr;
+	}
+
+	.journey-steps {
+		flex-direction: column;
+		align-items: center;
+	}
+
+	.journey-step-divider {
+		transform: rotate(90deg);
+		padding: 4px 0;
+	}
+
+	.journey-step {
+		max-width: 100%;
+		width: 100%;
+	}
+}
+
+@media (max-width: 600px) {
+	.explore-grid {
+		grid-template-columns: 1fr;
+	}
+
+	.testimonials-grid {
+		grid-template-columns: 1fr;
+	}
+}
