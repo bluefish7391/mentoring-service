@@ -24,7 +24,31 @@
 
 		get maxIndex() { return Math.max(0, this.total - this._vis); }
 
+		_initImageLoading() {
+			const images = this.section.querySelectorAll('.ctlg-img-wrap .ctlg-img');
+			images.forEach(img => {
+				const wrap = img.parentElement;
+				if (!wrap) return;
+
+				const markLoaded = () => {
+					wrap.classList.remove('is-loading');
+					img.style.opacity = '1';
+				};
+
+				img.style.opacity = '0';
+				if (img.complete && img.naturalWidth > 0) {
+					markLoaded();
+					return;
+				}
+
+				wrap.classList.add('is-loading');
+				img.addEventListener('load', markLoaded, { once: true });
+				img.addEventListener('error', markLoaded, { once: true });
+			});
+		}
+
 		_init() {
+			this._initImageLoading();
 			this._buildDots();
 			// Defer first slide until after the browser has laid out the track,
 			// so getBoundingClientRect() returns real dimensions.
