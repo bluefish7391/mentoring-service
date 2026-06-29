@@ -7,7 +7,6 @@
 		'js/site/modals.js',
 		'js/site/faq.js',
 		'js/site/share.js',
-		'js/site/delegated-events.js',
 		'js/site/reveal.js',
 		'js/gallery.js'
 	];
