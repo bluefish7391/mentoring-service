@@ -1,11 +1,25 @@
 // Nav scroll shadow
 (function () {
 	var nav = document.getElementById('siteNav');
+	var progress = document.getElementById('scroll-progress');
+
+	function updateScrollProgress() {
+		if (!progress) return;
+		var scrollTop = window.scrollY || window.pageYOffset;
+		var maxScroll = document.documentElement.scrollHeight - window.innerHeight;
+		var pct = maxScroll > 0 ? (scrollTop / maxScroll) * 100 : 0;
+		progress.style.width = Math.max(0, Math.min(100, pct)) + '%';
+	}
+
 	if (nav) {
 		window.addEventListener('scroll', function () {
 			nav.classList.toggle('nav-scrolled', window.scrollY > 10);
+			updateScrollProgress();
 		}, { passive: true });
 	}
+
+	window.addEventListener('resize', updateScrollProgress, { passive: true });
+	updateScrollProgress();
 }());
 
 // Mobile hamburger toggle

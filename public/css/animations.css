@@ -27,6 +27,19 @@ header>.container>div {
 	animation: fadeUp 0.6s 0.30s ease both;
 }
 
+/* Top scroll progress indicator */
+#scroll-progress {
+	position: fixed;
+	top: 0;
+	left: 0;
+	height: 3px;
+	width: 0%;
+	background: linear-gradient(to right, var(--primary), var(--accent));
+	z-index: 9999;
+	transition: width 0.1s linear;
+	pointer-events: none;
+}
+
 /* Scroll-reveal */
 .reveal {
 	opacity: 0;
@@ -76,5 +89,9 @@ header>.container>div {
 	*::after {
 		animation-duration: 0.01ms !important;
 		transition-duration: 0.01ms !important;
+	}
+
+	#scroll-progress {
+		transition: none;
 	}
 }
