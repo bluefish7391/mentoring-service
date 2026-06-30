@@ -3,11 +3,11 @@
 	if (!window.IntersectionObserver) return;
 
 	var targets = document.querySelectorAll(
-		'.skill-card, .pillar-card, .journey-step, .faq-item, .team-member'
+		'.skill-card, .pillar-card, .faq-item, .team-member'
 	);
 	targets.forEach(function (el) { el.classList.add('reveal'); });
 
-	['.skill-card', '.pillar-card', '.journey-step'].forEach(function (sel) {
+	['.skill-card', '.pillar-card'].forEach(function (sel) {
 		document.querySelectorAll(sel).forEach(function (el, i) {
 			el.style.transitionDelay = (i * 0.07) + 's';
 		});
