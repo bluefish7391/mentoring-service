@@ -27,7 +27,6 @@
 /* ── Section wrapper ───────────────────────────────────────── */
 .ctlg-section {
 	width: 100%;
-	background: var(--light);  /* matches alternating sections */
 	padding: 50px 0 56px;
 	overflow: hidden;          /* keeps edge masks tidy */
 }

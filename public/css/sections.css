@@ -5,6 +5,26 @@
 	justify-content: center;
 }
 
+.section-bg-white {
+	background: var(--bg-white);
+}
+
+.section-bg-light {
+	background: var(--light);
+}
+
+.section-bg-mint {
+	background: var(--bg-mint);
+}
+
+.section-bg-sky {
+	background: var(--bg-sky);
+}
+
+.section-bg-sage {
+	background: var(--bg-sage);
+}
+
 .skill-card {
 	background: white;
 	border-radius: 12px;
