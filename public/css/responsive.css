@@ -19,8 +19,21 @@
 	}
 
 	.team-gallery {
-		flex-direction: column;
-		align-items: center;
+		display: grid;
+		grid-template-columns: repeat(2, minmax(0, 1fr));
+		gap: 16px;
+		align-items: start;
+	}
+
+	.team-member {
+		width: 100%;
+		max-width: 260px;
+		margin: 0 auto;
+	}
+
+	.team-gallery .team-member:last-child:nth-child(odd) {
+		grid-column: 1 / -1;
+		justify-self: center;
 	}
 
 	.hamburger {
@@ -62,6 +75,16 @@
 @media (max-width: 600px) {
 	.explore-grid {
 		grid-template-columns: 1fr;
+	}
+}
+
+@media (max-width: 360px) {
+	.team-gallery {
+		grid-template-columns: 1fr;
+	}
+
+	.team-gallery .team-member:last-child:nth-child(odd) {
+		grid-column: auto;
 	}
 }
 
